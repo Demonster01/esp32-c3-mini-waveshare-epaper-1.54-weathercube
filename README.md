@@ -1,6 +1,6 @@
 # esp32-c3-mini-waveshare-epaper-1.54-weathercube
 
-Hardware:
+# Hardware:
 
 ESP32-C3-supermini board
 
@@ -13,7 +13,7 @@ Waveshare 1.54inch e-Paper module
 https://www.waveshare.com/wiki/1.54inch_e-Paper_Module_(C)
 
 
-Software libraries:
+# Software libraries:
 
 	adafruit/Adafruit GFX Library@^1.12.0
  
@@ -29,3 +29,6 @@ Software libraries:
  
 	bblanchon/ArduinoJson@^7.3.1
  
+# Original idea from
+
+https://github.com/G6EJD/ESP32-e-Paper-Weather-Display
