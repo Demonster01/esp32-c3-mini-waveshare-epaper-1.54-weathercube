@@ -33,4 +33,4 @@ https://www.waveshare.com/wiki/1.54inch_e-Paper_Module_(C)
 
 https://github.com/G6EJD/ESP32-e-Paper-Weather-Display
 
-https://github.com/ZinggJM/GxEPD
+https://github.com/lmarzen/esp32-weather-epd
