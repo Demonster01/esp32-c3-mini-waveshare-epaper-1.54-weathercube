@@ -171,7 +171,9 @@ void DisplayHeadingSection(uint32_t batVoltage) {
   uint32_t batPercent =
       calcBatPercent(batVoltage, MIN_BATTERY_VOLTAGE, MAX_BATTERY_VOLTAGE);
   if (batPercent < 20) {
+    display.setTextColor(GxEPD_RED);
     drawString(80, 0, "!" + String(batPercent) + "%", CENTER);
+    display.setTextColor(GxEPD_BLACK);
   } else {
     drawString(80, 0, String(batPercent) + "%", CENTER);
   }
@@ -772,6 +774,7 @@ void setup() {
       InitialiseDisplay();
       display.setTextSize(2);
       display.setFont(&DejaVu_Sans_Bold_11);
+      display.setTextColor(GxEPD_RED);
       drawString(100, 55, "!", CENTER);
       drawString(100, 75, "Low battery", CENTER);
       drawString(100, 110, "Please charge", CENTER);
@@ -796,16 +799,20 @@ void setup() {
   if (!aht.begin()) {
     display.setTextSize(2);
     display.setFont(&DejaVu_Sans_Bold_11);
+    display.setTextColor(GxEPD_RED);
     drawString(100, 100, "AHT not found", CENTER);
     drawString(100, 120, "Check wirig", CENTER);
+    display.display(false); // Full screen update mode
     esp_deep_sleep_start();
   }
 
   if (!bmp.begin()) {
     display.setTextSize(2);
     display.setFont(&DejaVu_Sans_Bold_11);
+    display.setTextColor(GxEPD_RED);
     drawString(100, 100, "BMP not found", CENTER);
     drawString(100, 120, "Check wirig", CENTER);
+    display.display(false); // Full screen update mode
     esp_deep_sleep_start();
   }
 
